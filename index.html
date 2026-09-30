@@ -1,1 +1,79 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sal & Brasa | Restaurante</title>
+  <meta name="description" content="Carnes na brasa, massas artesanais e sobremesas caseiras. Reserve sua mesa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="logo" href="#inicio">Sal & Brasa</a>
+    <nav aria-label="Principal">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#reserva" class="btn-mini">Reservar mesa</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <h1>Fogo baixo,<br>mesa cheia.</h1>
+      <p>Carnes na brasa, massas feitas todo dia e sobremesas da receita da vovó. Aberto de terça a domingo.</p>
+      <a class="btn" href="#reserva">Reservar mesa</a>
+    </section>
+
+    <section id="cardapio" class="secao">
+      <h2>Cardápio</h2>
+      <div class="filtros" role="group" aria-label="Filtrar cardápio">
+        <button class="ativo" data-cat="todos">Todos</button>
+        <button data-cat="brasa">Na brasa</button>
+        <button data-cat="massas">Massas</button>
+        <button data-cat="sobremesas">Sobremesas</button>
+      </div>
+      <ul class="menu" id="menu"></ul>
+    </section>
+
+    <section id="sobre" class="secao sobre">
+      <h2>Nossa história</h2>
+      <p>O Sal & Brasa nasceu em 2015 na cozinha de uma família de Porto Alegre. Hoje servimos os mesmos pratos, com ingredientes de produtores da região e carvão de reflorestamento.</p>
+      <dl class="info">
+        <div><dt>Endereço</dt><dd>Rua das Acácias, 120 – Centro</dd></div>
+        <div><dt>Horário</dt><dd>Ter a sex: 12h–15h e 19h–23h<br>Sáb e dom: 12h–23h</dd></div>
+        <div><dt>Telefone</dt><dd>(51) 3000-0000</dd></div>
+      </dl>
+    </section>
+
+    <section id="reserva" class="secao">
+      <h2>Reserve sua mesa</h2>
+      <form id="form-reserva" novalidate>
+        <label>Nome
+          <input type="text" name="nome" required autocomplete="name">
+        </label>
+        <label>E-mail
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label>Data
+          <input type="date" name="data" required>
+        </label>
+        <label>Pessoas
+          <select name="pessoas" required>
+            <option value="">Selecione</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7 ou mais</option>
+          </select>
+        </label>
+        <button class="btn" type="submit">Confirmar reserva</button>
+        <p id="msg" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>© 2026 Sal & Brasa. Projeto de demonstração.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
