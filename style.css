@@ -1,1 +1,77 @@
+:root {
+  --azul: #1c2b4a;
+  --limao: #f0c93b;
+  --giz: #f7f8fa;
+  --tinta: #1a1d24;
+  --cinza: #5b6270;
+  --borda: #d9dde5;
+}
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { font-family: "Source Serif 4", Georgia, serif; line-height: 1.65; color: var(--tinta); background: var(--giz); }
+h1, h2, .logo, button, .btn, dt { font-family: "Bricolage Grotesque", system-ui, sans-serif; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--limao); outline-offset: 2px; }
 
+.topo { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem;
+  padding: 1rem 5vw; background: var(--azul); position: sticky; top: 0; z-index: 10; }
+.logo { color: var(--limao); font-weight: 800; font-size: 1.3rem; text-decoration: none; }
+nav { display: flex; gap: 1.2rem; align-items: center; }
+nav a { color: #fff; text-decoration: none; }
+nav a:hover { color: var(--limao); }
+.btn-mini { background: var(--limao); color: var(--azul) !important; padding: .35rem .9rem; border-radius: 999px; font-weight: 500; }
+
+.hero { background: var(--azul); color: #fff; padding: 6rem 5vw 5rem; }
+.hero h1 { font-size: clamp(2.8rem, 9vw, 6rem); line-height: 1; font-weight: 800; color: var(--limao); }
+.hero p { max-width: 34rem; margin: 1.5rem 0 2rem; font-size: 1.15rem; }
+.btn { display: inline-block; background: var(--limao); color: var(--azul); border: 0; padding: .8rem 1.6rem;
+  border-radius: 6px; font-weight: 800; font-size: 1rem; text-decoration: none; cursor: pointer; }
+.btn:hover { filter: brightness(.95); }
+
+.secao { padding: 4rem 5vw; max-width: 60rem; margin: auto; }
+.secao h2 { font-size: 2rem; font-weight: 800; color: var(--azul); margin-bottom: 1.5rem; }
+
+.filtros { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
+.filtros button { background: transparent; border: 1.5px solid var(--azul); color: var(--azul);
+  padding: .4rem 1rem; border-radius: 999px; cursor: pointer; font-weight: 500; }
+.filtros button.ativo { background: var(--azul); color: #fff; }
+
+.menu { list-style: none; padding: 0; }
+.menu li { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--borda); }
+.menu strong { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.1rem; }
+.menu p { color: var(--cinza); max-width: 36rem; }
+.menu .preco { font-weight: 600; white-space: nowrap; }
+
+.sobre p { max-width: 40rem; }
+.info { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+dt { font-weight: 800; color: var(--azul); }
+
+form { display: grid; gap: 1rem; max-width: 28rem; }
+label { display: grid; gap: .3rem; font-weight: 600; }
+input, select { padding: .65rem; border: 1.5px solid var(--borda); border-radius: 6px; font: inherit; background: #fff; }
+input.erro, select.erro { border-color: #b3261e; }
+#msg { min-height: 1.5rem; }
+#msg.ok { color: #1b6e3c; }
+#msg.falha { color: #b3261e; }
+
+footer { text-align: center; padding: 2rem; background: var(--azul); color: #fff; font-size: .9rem; }
+
+/* Avaliações */
+.media { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.1rem; margin-bottom: 1.5rem; }
+.estrela-cheia { color: #e0a800; }
+.estrela-vazia { color: #c3c8d2; }
+textarea { padding: .65rem; border: 1.5px solid var(--borda); border-radius: 6px; font: inherit; background: #fff; resize: vertical; }
+textarea.erro { border-color: #b3261e; }
+.nota { border: 0; padding: 0; }
+.nota legend { font-weight: 600; margin-bottom: .3rem; }
+.estrelas { display: flex; flex-direction: row-reverse; justify-content: flex-end; width: fit-content; }
+.estrelas input { position: absolute; opacity: 0; pointer-events: none; }
+.estrelas label { display: block; font-size: 2.2rem; line-height: 1; color: #c3c8d2; cursor: pointer; font-weight: 400; padding: 0 .1rem; }
+.estrelas label.ativa { color: #e0a800; }
+.estrelas input:focus-visible + label { outline: 3px solid var(--limao); outline-offset: 2px; }
+.avaliacoes { list-style: none; padding: 0; margin-top: 2.5rem; }
+.avaliacoes li { padding: 1.2rem 0; border-bottom: 1px solid var(--borda); }
+.avaliacoes .topo-av { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+.avaliacoes strong { font-family: "Bricolage Grotesque", sans-serif; }
+.avaliacoes .data-av { color: var(--cinza); font-size: .9rem; }
+.avaliacoes p { margin-top: .3rem; }
