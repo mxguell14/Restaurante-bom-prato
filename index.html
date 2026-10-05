@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bom Prato | Restaurante</title>
-  <meta name="description" content="Carnes na brasa, massas artesanais e sobremesas caseiras. Reserve sua mesa.">
+  <meta name="description" content="Entradas, pratos principais, massas e sobremesas caseiras. Reserve sua mesa.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -22,8 +22,8 @@
 
   <main id="inicio">
     <section class="hero">
-      <h1>Fogo baixo,<br>mesa cheia.</h1>
-      <p>Carnes na brasa, massas feitas todo dia e sobremesas da receita da vovó. Aberto de terça a domingo.</p>
+      <h1>Comida caseira,<br>mesa cheia.</h1>
+      <p>Pratos feitos todos os dias com ingredientes frescos e receitas de família. Aberto de terça a domingo.</p>
       <a class="btn" href="#reserva">Reservar mesa</a>
     </section>
 
@@ -31,11 +31,88 @@
       <h2>Cardápio</h2>
       <div class="filtros" role="group" aria-label="Filtrar cardápio">
         <button class="ativo" data-cat="todos">Todos</button>
-        <button data-cat="brasa">Na brasa</button>
+        <button data-cat="entradas">Entradas</button>
+        <button data-cat="principais">Pratos principais</button>
         <button data-cat="massas">Massas</button>
         <button data-cat="sobremesas">Sobremesas</button>
+        <button data-cat="bebidas">Bebidas</button>
       </div>
-      <ul class="menu" id="menu"></ul>
+
+      <ul class="menu" id="menu">
+        <!-- Entradas -->
+        <li data-cat="entradas">
+          <div><strong>Bolinho de mandioca com carne-seca</strong><p>Crocante por fora, cremoso por dentro, com geleia de pimenta.</p></div>
+          <span class="preco">R$ 26,00</span>
+        </li>
+        <li data-cat="entradas">
+          <div><strong>Bruschetta de tomate e manjericão</strong><p>Pão rústico, tomate maduro, azeite e manjericão fresco.</p></div>
+          <span class="preco">R$ 22,00</span>
+        </li>
+        <li data-cat="entradas">
+          <div><strong>Caldinho de feijão da casa</strong><p>Servido bem quente, com torresmo e cebolinha.</p></div>
+          <span class="preco">R$ 19,00</span>
+        </li>
+
+        <!-- Pratos principais -->
+        <li data-cat="principais">
+          <div><strong>Filé à Bom Prato</strong><p>Filé grelhado com molho de mostarda e mel, arroz e batata rústica.</p></div>
+          <span class="preco">R$ 58,00</span>
+        </li>
+        <li data-cat="principais">
+          <div><strong>Moqueca de peixe e camarão</strong><p>Leite de coco, dendê, pimentões e pirão.</p></div>
+          <span class="preco">R$ 72,00</span>
+        </li>
+        <li data-cat="principais">
+          <div><strong>Frango assado com ervas</strong><p>Coxa e sobrecoxa, purê de abóbora e farofa de alho.</p></div>
+          <span class="preco">R$ 44,00</span>
+        </li>
+        <li data-cat="principais">
+          <div><strong>Risoto de cogumelos</strong><p>Arroz arbóreo, mix de cogumelos e parmesão.</p></div>
+          <span class="preco">R$ 52,00</span>
+        </li>
+
+        <!-- Massas -->
+        <li data-cat="massas">
+          <div><strong>Espaguete ao pomodoro</strong><p>Molho de tomates frescos, alho e manjericão.</p></div>
+          <span class="preco">R$ 36,00</span>
+        </li>
+        <li data-cat="massas">
+          <div><strong>Lasanha de berinjela</strong><p>Camadas de berinjela, molho branco e queijo gratinado.</p></div>
+          <span class="preco">R$ 42,00</span>
+        </li>
+        <li data-cat="massas">
+          <div><strong>Ravióli de queijo com molho de nozes</strong><p>Massa fresca recheada, manteiga e nozes tostadas.</p></div>
+          <span class="preco">R$ 48,00</span>
+        </li>
+
+        <!-- Sobremesas -->
+        <li data-cat="sobremesas">
+          <div><strong>Pudim de leite condensado</strong><p>Cremoso, com calda de caramelo.</p></div>
+          <span class="preco">R$ 16,00</span>
+        </li>
+        <li data-cat="sobremesas">
+          <div><strong>Mousse de maracujá</strong><p>Leve e azedinha, com calda da fruta.</p></div>
+          <span class="preco">R$ 15,00</span>
+        </li>
+        <li data-cat="sobremesas">
+          <div><strong>Brownie com sorvete de creme</strong><p>Chocolate meio amargo, servido quentinho.</p></div>
+          <span class="preco">R$ 24,00</span>
+        </li>
+
+        <!-- Bebidas -->
+        <li data-cat="bebidas">
+          <div><strong>Limonada suíça</strong><p>Limão batido com leite condensado e gelo.</p></div>
+          <span class="preco">R$ 12,00</span>
+        </li>
+        <li data-cat="bebidas">
+          <div><strong>Suco de maracujá com hortelã</strong><p>Natural, feito na hora.</p></div>
+          <span class="preco">R$ 13,00</span>
+        </li>
+        <li data-cat="bebidas">
+          <div><strong>Chá gelado de pêssego</strong><p>Infusão de chá preto com pêssego e gelo.</p></div>
+          <span class="preco">R$ 11,00</span>
+        </li>
+      </ul>
     </section>
 
     <section id="sobre" class="secao sobre">
@@ -64,6 +141,7 @@
             <input type="radio" id="e2" name="nota" value="2"><label for="e2" title="2 estrelas">★</label>
             <input type="radio" id="e1" name="nota" value="1"><label for="e1" title="1 estrela">★</label>
           </div>
+          <p class="nota-texto" id="nota-texto">Clique nas estrelas para avaliar</p>
         </fieldset>
         <label>Comentário
           <textarea name="comentario" rows="6" maxlength="300" required></textarea>
