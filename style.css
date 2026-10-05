@@ -38,6 +38,7 @@ nav a:hover { color: var(--limao); }
 
 .menu { list-style: none; padding: 0; }
 .menu li { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--borda); }
+.menu li[hidden] { display: none; }
 .menu strong { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.1rem; }
 .menu p { color: var(--cinza); max-width: 36rem; }
 .menu .preco { font-weight: 600; white-space: nowrap; }
@@ -64,11 +65,16 @@ textarea { padding: .65rem; border: 1.5px solid var(--borda); border-radius: 6px
 textarea.erro { border-color: #b3261e; }
 .nota { border: 0; padding: 0; }
 .nota legend { font-weight: 600; margin-bottom: .3rem; }
-.estrelas { display: flex; flex-direction: row-reverse; justify-content: flex-end; width: fit-content; }
+.estrelas { position: relative; display: flex; flex-direction: row-reverse; justify-content: flex-end; width: fit-content; }
 .estrelas input { position: absolute; opacity: 0; pointer-events: none; }
-.estrelas label { display: block; font-size: 2.2rem; line-height: 1; color: #c3c8d2; cursor: pointer; font-weight: 400; padding: 0 .1rem; }
-.estrelas label.ativa { color: #e0a800; }
+.estrelas label { display: block; font-size: 2.4rem; line-height: 1; color: #c3c8d2; cursor: pointer; font-weight: 400; padding: 0 .12rem; transition: color .15s, transform .15s; }
+.estrelas label:hover { transform: scale(1.12); }
+/* A estrela marcada e todas as anteriores ficam amarelas */
+.estrelas input:checked ~ label,
+.estrelas label:hover,
+.estrelas label:hover ~ label { color: #f5b301; }
 .estrelas input:focus-visible + label { outline: 3px solid var(--limao); outline-offset: 2px; }
+.nota-texto { margin-top: .3rem; color: var(--cinza); font-size: .95rem; }
 .avaliacoes { list-style: none; padding: 0; margin-top: 2.5rem; }
 .avaliacoes li { padding: 1.2rem 0; border-bottom: 1px solid var(--borda); }
 .avaliacoes .topo-av { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
