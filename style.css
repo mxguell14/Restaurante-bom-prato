@@ -7,7 +7,7 @@
   --borda: #d9dde5;
 }
 * { box-sizing: border-box; margin: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body { font-family: "Source Serif 4", Georgia, serif; line-height: 1.65; color: var(--tinta); background: var(--giz); }
 h1, h2, .logo, button, .btn, dt { font-family: "Bricolage Grotesque", system-ui, sans-serif; }
@@ -18,7 +18,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .logo { color: var(--limao); font-weight: 800; font-size: 1.3rem; text-decoration: none; }
 nav { display: flex; gap: 1.2rem; align-items: center; }
 nav a { color: #fff; text-decoration: none; }
-nav a:hover { color: var(--limao); }
+nav a:hover, nav a.atual { color: var(--limao); }
+nav a.atual { text-decoration: underline; text-underline-offset: .35rem; }
+.btn-mini.atual { text-decoration: none; }
 .btn-mini { background: var(--limao); color: var(--azul) !important; padding: .35rem .9rem; border-radius: 999px; font-weight: 500; }
 
 .hero { background: var(--azul); color: #fff; padding: 6rem 5vw 5rem; }
