@@ -58,8 +58,7 @@ input.erro, select.erro { border-color: #b3261e; }
 footer { text-align: center; padding: 2rem; background: var(--azul); color: #fff; font-size: .9rem; }
 
 /* Avaliações */
-.media { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.1rem; margin-bottom: 1.5rem; }
-.estrela-cheia { color: #e0a800; }
+.estrela-cheia { color: #f5b301; }
 .estrela-vazia { color: #c3c8d2; }
 textarea { padding: .65rem; border: 1.5px solid var(--borda); border-radius: 6px; font: inherit; background: #fff; resize: vertical; }
 textarea.erro { border-color: #b3261e; }
@@ -75,9 +74,25 @@ textarea.erro { border-color: #b3261e; }
 .estrelas label:hover ~ label { color: #f5b301; }
 .estrelas input:focus-visible + label { outline: 3px solid var(--limao); outline-offset: 2px; }
 .nota-texto { margin-top: .3rem; color: var(--cinza); font-size: .95rem; }
-.avaliacoes { list-style: none; padding: 0; margin-top: 2.5rem; }
-.avaliacoes li { padding: 1.2rem 0; border-bottom: 1px solid var(--borda); }
+
+/* Layout: formulário à esquerda, avaliações à direita */
+.av-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+.av-grid h3 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.25rem; color: var(--azul); margin-bottom: 1rem; }
+.av-form form { max-width: 100%; }
+@media (max-width: 760px) { .av-grid { grid-template-columns: 1fr; } }
+
+/* Mural de avaliações */
+.mural { background: #fff; border: 1.5px solid var(--borda); border-radius: 10px; padding: 1.5rem; }
+.media { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.05rem; padding-bottom: 1rem; margin-bottom: .5rem; border-bottom: 1px solid var(--borda); }
+.media .estrela-cheia, .media .estrela-vazia { font-size: 1.3rem; letter-spacing: .05em; }
+
+.avaliacoes { list-style: none; padding: 0; margin: 0; max-height: 26rem; overflow-y: auto; }
+.avaliacoes:empty::before { content: "Nenhuma avaliação ainda. Seja o primeiro a avaliar!"; display: block; padding: 1.5rem 0; color: var(--cinza); }
+.avaliacoes li { padding: 1rem 0; border-bottom: 1px solid var(--borda); }
+.avaliacoes li:last-child { border-bottom: 0; }
 .avaliacoes .topo-av { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
 .avaliacoes strong { font-family: "Bricolage Grotesque", sans-serif; }
-.avaliacoes .data-av { color: var(--cinza); font-size: .9rem; }
-.avaliacoes p { margin-top: .3rem; }
+.avaliacoes .data-av { color: var(--cinza); font-size: .85rem; }
+.avaliacoes li > span { display: block; font-size: 1.1rem; letter-spacing: .05em; margin-top: .1rem; }
+.avaliacoes p { margin-top: .3rem; overflow-wrap: anywhere; }
