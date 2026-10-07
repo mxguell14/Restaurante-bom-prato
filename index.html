@@ -13,6 +13,7 @@
   <header class="topo">
     <a class="logo" href="#inicio">Bom Prato</a>
     <nav aria-label="Principal">
+      <a href="#inicio">Início</a>
       <a href="#cardapio">Cardápio</a>
       <a href="#sobre">Sobre</a>
       <a href="#avaliacoes">Avaliações</a>
@@ -20,8 +21,8 @@
     </nav>
   </header>
 
-  <main id="inicio">
-    <section class="hero">
+  <main>
+    <section id="inicio" class="hero">
       <h1>Comida caseira,<br>mesa cheia.</h1>
       <p>Pratos feitos todos os dias com ingredientes frescos e receitas de família. Aberto de terça a domingo.</p>
       <a class="btn" href="#reserva">Reservar mesa</a>
@@ -105,4 +106,91 @@
           <span class="preco">R$ 12,00</span>
         </li>
         <li data-cat="bebidas">
-          <div><strong>Suco de maracujá com ho
+          <div><strong>Suco de maracujá com hortelã</strong><p>Natural, feito na hora.</p></div>
+          <span class="preco">R$ 13,00</span>
+        </li>
+        <li data-cat="bebidas">
+          <div><strong>Chá gelado de pêssego</strong><p>Infusão de chá preto com pêssego e gelo.</p></div>
+          <span class="preco">R$ 11,00</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="sobre" class="secao sobre">
+      <h2>Nossa história</h2>
+      <p>O Bom Prato nasceu em 2026, de um grupo de alunos que sonhava em ter um restaurante. Hoje servimos pratos feitos com ingredientes de produtores da região e muito carinho.</p>
+      <dl class="info">
+        <div><dt>Endereço</dt><dd>Rua das Acácias, 120 – Centro</dd></div>
+        <div><dt>Horário</dt><dd>Ter a sex: 12h–15h e 19h–23h<br>Sáb e dom: 12h–23h</dd></div>
+        <div><dt>Telefone</dt><dd>(51) 3000-0000</dd></div>
+      </dl>
+    </section>
+
+    <section id="avaliacoes" class="secao">
+      <h2>Avaliações</h2>
+      <div class="av-grid">
+
+        <div class="av-form">
+          <h3>Deixe sua avaliação</h3>
+          <form id="form-avaliacao" novalidate>
+            <label>Nome
+              <input type="text" name="nome" required maxlength="40" autocomplete="name">
+            </label>
+            <fieldset class="nota">
+              <legend>Sua nota</legend>
+              <div class="estrelas">
+                <input type="radio" id="e5" name="nota" value="5"><label for="e5" title="5 estrelas">★</label>
+                <input type="radio" id="e4" name="nota" value="4"><label for="e4" title="4 estrelas">★</label>
+                <input type="radio" id="e3" name="nota" value="3"><label for="e3" title="3 estrelas">★</label>
+                <input type="radio" id="e2" name="nota" value="2"><label for="e2" title="2 estrelas">★</label>
+                <input type="radio" id="e1" name="nota" value="1"><label for="e1" title="1 estrela">★</label>
+              </div>
+              <p class="nota-texto" id="nota-texto">Clique nas estrelas para avaliar</p>
+            </fieldset>
+            <label>Comentário
+              <textarea name="comentario" rows="6" maxlength="300" required></textarea>
+            </label>
+            <button class="btn" type="submit">Enviar avaliação</button>
+            <p id="msg-av" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <!-- Espaço onde as avaliações dos clientes aparecem -->
+        <aside class="mural" aria-labelledby="mural-titulo">
+          <h3 id="mural-titulo">O que nossos clientes dizem</h3>
+          <p class="media" id="media"></p>
+          <ul id="lista-avaliacoes" class="avaliacoes" aria-live="polite"></ul>
+        </aside>
+
+      </div>
+    </section>
+
+    <section id="reserva" class="secao">
+      <h2>Reserve sua mesa</h2>
+      <form id="form-reserva" novalidate>
+        <label>Nome
+          <input type="text" name="nome" required autocomplete="name">
+        </label>
+        <label>E-mail
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label>Data
+          <input type="date" name="data" required>
+        </label>
+        <label>Pessoas
+          <select name="pessoas" required>
+            <option value="">Selecione</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7 ou mais</option>
+          </select>
+        </label>
+        <button class="btn" type="submit">Confirmar reserva</button>
+        <p id="msg" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>© 2026 Bom Prato. Projeto de demonstração.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
